@@ -16,8 +16,8 @@ body {
   border-color: #e5e4e4;
 }
 
-.layout{
-  background-color: #fcfcfc;
+.layout-bg{
+  background-color: #f4f5f4;
 }
 .text-secondary{
   color: #6b7280;
@@ -26,5 +26,10 @@ body {
 .heading{
   font-size: 2rem;
   font-weight: bold;
+}
+
+.sub-heading{
+  font-size: 1rem;
+  font-weight: 700;
 }
 

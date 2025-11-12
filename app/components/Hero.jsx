@@ -9,7 +9,7 @@ const heroItems = [{"title": "health care facilities", "number": "500+"}, {"titl
 
 const Hero = () => {
   return (
-    <section className="flex justify-between items-center md:px-20 md:py-20">
+    <section className="flex justify-between  items-center md:px-20 md:py-20 py-10">
       <div className="flex flex-col space-y-8 justify-center p-5 ">
         <div>
           <h2 className="text heading">
@@ -57,9 +57,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hidden md:block p-5 ">
+      <div className="hidden  md:block p-5 ">
         <Image
-          className="drop-shadow-2xl"
+          className="drop-shadow-xl rounded-md"
           src="/medical.jpg"
           width={700}
           height={700}
