@@ -1,11 +1,12 @@
 import { Button } from "@mantine/core";
 import Image from "next/image";
-import React from "react";
 import { IoMdArrowForward } from "react-icons/io";
 
-
-const heroItems = [{"title": "health care facilities", "number": "500+"}, {"title": "products delivered", "number": "10,000+"}, {"title": "satisfied clients", "number": "300+"}];  
-
+const HeroItems = [
+  { title: "health care facilities", number: "500+" },
+  { title: "products delivered", number: "10,000+" },
+  { title: "satisfied clients", number: "300+" },
+];
 
 const Hero = () => {
   return (
@@ -29,7 +30,6 @@ const Hero = () => {
             style={{
               "background-color": "#005085",
             }}
-            className=""
           >
             Explore Products
             <IoMdArrowForward className="ml-2 mt-1" />
@@ -46,10 +46,12 @@ const Hero = () => {
           </Button>
         </div>
         <div className="flex  text-center gap-3">
-          {heroItems.map((item, index) => {
+          {HeroItems.map((item, index) => {
             return (
               <div key={index} className="flex flex-col gap-y-1">
-                <p className="text-3xl font-bold text-green-500">{item.number}</p>
+                <p className="text-3xl font-bold text-green-500">
+                  {item.number}
+                </p>
                 <p className="text-sm text-secondary">{item.title} </p>
               </div>
             );

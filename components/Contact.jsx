@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
 import { FaStethoscope } from "react-icons/fa";
-import { Button, Input, SimpleGrid, Textarea } from "@mantine/core";
+import { Button, Input, InputLabel, SimpleGrid, Textarea } from "@mantine/core";
 import { CiStopwatch } from "react-icons/ci";
+import { useState } from "react";
 
 const Contacts = [
   {
@@ -25,6 +26,26 @@ const Contacts = [
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const onchange = (e) => {
+    console.log(e.target.name, e.target.value);
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <section className="flex w-full layout-bg flex-col justify-center md:px-20 md:py-20 px-6 py-10 items-center space-y-10">
       <div className="w-full text-center">
@@ -62,23 +83,33 @@ const Contact = () => {
           })}
         </SimpleGrid>
       </div>
+
       <div className="w-full flex flex-col md:flex-row justify-between md:gap-x-10  items-start  ">
-        <div className="w-full px-6 bg-white py-10 flex justify-center items-center rounded-md border border-slate-200  flex-col gap-3">
+        {/* Form  Section */}
+        <form
+          onSubmit={handleSubmit}
+          className="w-full px-6 bg-white py-10 flex justify-center items-center rounded-md border border-slate-200  flex-col gap-3"
+        >
           <div className="w-full flex items-center flex-col ">
-            <label className="text-sm w-full text-start   font-semibold">
+            <InputLabel className="text-sm w-full text-start   font-semibold">
               Name
-            </label>
+            </InputLabel>
             <Input
               type="text"
+              name="name"
               placeholder="Your Name"
               className="border border-gray-300 rounded-md   w-full "
+              onchange={onchange}
+              required
             />
           </div>
           <div className="w-full">
             <label className="text-sm   font-semibold">Email</label>
             <Input
               type="email"
+              name="email"
               placeholder="Your Email"
+              onchange={onchange}
               className="border border-gray-300 rounded-md   w-full "
             />
           </div>
@@ -86,20 +117,24 @@ const Contact = () => {
             <label className="text-sm   font-semibold">Phone</label>
             <Input
               type="phone"
+              name="phone"
               placeholder="Your Phone"
+              onchange={onchange}
               className="border border-gray-300 rounded-md   w-full "
             />
           </div>
           <div className="w-full">
             <label className="text-sm    font-semibold">Message</label>
             <Textarea
-              type="phone"
+              name="message"
               placeholder="Your Phone"
+              onchange={onchange}
               className="border border-gray-300 rounded-md   w-full "
             ></Textarea>
           </div>
 
           <Button
+            type="submit"
             style={{
               "background-color": "#005085",
             }}
@@ -107,7 +142,7 @@ const Contact = () => {
           >
             Submit
           </Button>
-        </div>
+        </form>
 
         <SimpleGrid cols={1} className="w-full">
           <div className="flex w-full bg-white p-6 rounded-xl border border-slate-200 mb-3  justify-start gap-x-10 items-start flex-row h-40 hover:shadow-lg  space-y-3 transition-all duration-400">
