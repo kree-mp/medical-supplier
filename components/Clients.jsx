@@ -20,7 +20,7 @@ const Products = [{
 
 const Clients = () => {
   return ( 
-    <sections className="w-full md:px-20 items-center px-6 py-20 flex flex-col space-y-10">
+    <sections id="client"  className="w-full md:px-20 items-center px-6 py-20 flex flex-col space-y-10">
       <div className="space-y-5 text-center">
         <h2 className="heading ">Trusted by Healthcare Leaders</h2>
         <p className="text-secondary">

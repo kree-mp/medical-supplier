@@ -3,14 +3,18 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { useState } from "react";
+import Link from "next/link";
 
 const headerItem = [
-  "About",
-  "Products",
-  "Services",
-  "Clients",
-  "Get a Quote",
-  "Contact",
+
+
+  {title: "Home", href: "#home"},
+  {title: "About", href: "#about"},
+  {title: "Products", href: "#product"},
+  {title: "Services", href: "#service"},
+  {title: "Clients", href: "#client"},
+  {title: "Contact", href: "#contact"},
+
 ];
 
 const Header = () => {
@@ -20,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <nav className={`w-full ${isOpen && "h-screen" } md:h-10 md:px-20 px-5 lg:px-10 py-5 md:py-10 flex md:flex-row flex-col md:justify-around justify-start md:items-center items-start  layout text-black shadow-md border-b border-gray-300`}>
+    <nav className={`w-full sticky top-0 bg-white z-50 ${isOpen && "h-screen" } md:h-10 md:px-20 px-5 lg:px-10 py-5 md:py-10 flex md:flex-row flex-col md:justify-around justify-start md:items-center items-start  layout text-black shadow-md border-b border-gray-300`}>
       <div>
         <h1 className="font-bold text-xl">Nepal MedSupply Hub</h1>
       </div>
@@ -31,7 +35,9 @@ const Header = () => {
               key={index}
               className="cursor-pointer text-md text-gray-700 hover:text-black"
             >
-              {item}
+            <Link href={item.href}>
+              {item.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -47,7 +53,9 @@ const Header = () => {
                 key={index}
                 className="cursor-pointer text-md text-gray-700 hover:text-black"
               >
-                {item}
+                <Link href={item.href}>
+              {item.title}
+              </Link>
               </li>
             ))}
           </ul>

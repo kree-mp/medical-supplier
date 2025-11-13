@@ -10,7 +10,7 @@ const HeroItems = [
 
 const Hero = () => {
   return (
-    <section className="flex justify-between  items-center md:px-20 md:py-20 py-10">
+    <section id="home" className="flex justify-between  items-center md:px-20 md:py-20 py-10">
       <div className="flex flex-col space-y-8 justify-center p-5 ">
         <div>
           <h2 className="text heading">

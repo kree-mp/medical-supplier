@@ -33,7 +33,7 @@ const Contact = () => {
     message: "",
   });
 
-  const onchange = (e) => {
+  const onChange = (e) => {
     console.log(e.target.name, e.target.value);
     setFormData({
       ...formData,
@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex w-full layout-bg flex-col justify-center md:px-20 md:py-20 px-6 py-10 items-center space-y-10">
+    <section id="contact" className="flex w-full layout-bg flex-col justify-center md:px-20 md:py-20 px-6 py-10 items-center space-y-10">
       <div className="w-full text-center">
         <h2 className="text-2xl font-bold">Get In Touch</h2>
         <p className="text-secondary py-6">
@@ -99,7 +99,7 @@ const Contact = () => {
               name="name"
               placeholder="Your Name"
               className="border border-gray-300 rounded-md   w-full "
-              onchange={onchange}
+              onChange={onChange}
               required
             />
           </div>
@@ -109,7 +109,7 @@ const Contact = () => {
               type="email"
               name="email"
               placeholder="Your Email"
-              onchange={onchange}
+              onChange={onChange}
               className="border border-gray-300 rounded-md   w-full "
             />
           </div>
@@ -119,7 +119,7 @@ const Contact = () => {
               type="phone"
               name="phone"
               placeholder="Your Phone"
-              onchange={onchange}
+              onChange={onChange}
               className="border border-gray-300 rounded-md   w-full "
             />
           </div>
@@ -128,7 +128,7 @@ const Contact = () => {
             <Textarea
               name="message"
               placeholder="Your Phone"
-              onchange={onchange}
+              onChange={onChange}
               className="border border-gray-300 rounded-md   w-full "
             ></Textarea>
           </div>

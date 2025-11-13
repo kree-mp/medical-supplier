@@ -27,7 +27,7 @@ const AboutItems = [
 
 const About = () => {
   return (
-    <section className=" w-full md:px-20 layout-bg flex py-20 md:flex-row md:justify-between flex-col px-6 space-y-6 items-start">
+    <section id="about" className=" w-full md:px-20 layout-bg flex py-20 md:flex-row md:justify-between flex-col px-6 space-y-6 items-start">
       <div className="w-auto md:pr-5 md:w-6/12">
         <Image
           className="drop-shadow-2xl rounded-xl"
@@ -48,9 +48,9 @@ const About = () => {
           </p>
         </div>
         <div className="flex flex-col pt-8">
-          {AboutItems.map((item) => {
+          {AboutItems.map((item , index) => {
             return (
-              <div className="flex gap-1 py-2">
+              <div key={index} className="flex gap-1 py-2">
                 <div
                   className={`rounded-full ${item.bgColor} flex shrink-0 justify-center items-center w-10 h-10`}
                 >
